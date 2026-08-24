@@ -1,24 +1,47 @@
-# CircuitAnalysis
+# CircuitAnalysis — 5 V DC Supply Lab
 
-Hardware lab evidence for a **5 V DC supply** circuit: annotated PDF write-up, board photographs, and short demonstration videos.
+Hardware lab archive for a **regulated 5 volt DC power supply**: write-up PDF, board photos, and short videos of the live circuit. **No software build.**
 
----
-
-## Overview
-
-This repository archives a basic electronics / circuit analysis lab focused on building and verifying a regulated **5 volt DC power supply**. Media files capture the physical assembly and operating behavior; the PDF documents the design, measurements, and observations.
+[rohaan2802](https://github.com/rohaan2802)
 
 ---
 
-## Features
+## Table of contents
 
-- Lab report PDF: `5 VOLT DC SUPPLY.pdf`
-- Still photos of the constructed circuit / bench setup
-- MP4 clips showing powered operation / measurement moments
+1. [What this lab is](#what-this-lab-is)
+2. [Typical 5 V DC supply stages](#typical-5-v-dc-supply-stages)
+3. [Files](#files)
+4. [How to use the archive](#how-to-use-the-archive)
+5. [Safety](#safety)
 
 ---
 
-## Repository structure
+## What this lab is
+
+Evidence package for a basic electronics / circuit-analysis experiment: build a **mains-derived (or adapter-fed) 5 V** rail, measure it, and document construction. The PDF is the graded write-up (theory, schematic, readings, observations). Photos/videos are the physical proof.
+
+Dated media in the tree: **5–7 Dec 2022** (`IMG_20221205_*`, `video_20221205_*`, WhatsApp image `WA0006`).
+
+---
+
+## Typical 5 V DC supply stages
+
+Use this as the checklist while reading `5 VOLT DC SUPPLY.pdf` (match names to *your* schematic):
+
+| Stage | Role |
+|-------|------|
+| Transformer (if used) | Step down AC; isolation |
+| Rectifier | Bridge diodes → pulsating DC |
+| Filter | Reservoir capacitor(s); reduce ripple |
+| Regulator | e.g. **7805** (or similar) → ~5 V DC |
+| Load / LED | Demonstrate a stable rail |
+| Metering | DMM no-load vs loaded; optional scope ripple |
+
+Your PDF may use a wall wart instead of a lab transformer — follow the document, not this table, if they differ.
+
+---
+
+## Files
 
 ```text
 CircuitAnalysis/
@@ -29,37 +52,28 @@ CircuitAnalysis/
 └── video_20221205_163700.mp4
 ```
 
----
-
-## Build / run
-
-No software build. Open assets with standard tools:
-
-- PDF reader for `5 VOLT DC SUPPLY.pdf`
-- Image viewer for JPEG/JPG
-- Any media player for the MP4 videos
-
-> **Safety:** When reproducing the circuit physically, use appropriate transformer ratings, fuse protection, polarized capacitors, and isolated measurement practices. This repo stores documentation only.
+(Exact names from `TREE.txt`.)
 
 ---
 
-## Usage
+## How to use the archive
 
-1. Read the PDF for schematic/theory and expected voltages.
-2. Compare photos to your own breadboard/PCB layout.
-3. Watch the videos for qualitative verification of the live supply.
+1. Read the PDF for schematic, part values, and expected voltages.  
+2. Compare photos to your breadboard/PCB (regulator orientation, cap polarity, heatsink).  
+3. Watch the MP4s for power-on / measurement moments.  
 
----
-
-## Extending
-
-- Add a clear schematic image (KiCad/Fritzing export) beside the PDF.
-- Log multimeter readings (no-load / loaded) in a small results table Markdown section.
-- Include BOM with part numbers and tolerances.
-- Capture scope screenshots of ripple under load if equipment allows.
+Viewers: any PDF reader, image viewer, and video player.
 
 ---
 
-## License
+## Safety
 
-Lab coursework media - retain any institutional attribution requirements.
+Documentation only. If you rebuild: correct transformer VA, **fuse**, polarized capacitors, regulator dropout/headroom, isolated meter practice. Mains-side work belongs in a supervised lab.
+
+**Extend:** export a clean schematic (KiCad), BOM with tolerances, no-load/loaded table in Markdown, scope screenshot of ripple.
+
+---
+
+## Author
+
+Electronics lab coursework · [rohaan2802](https://github.com/rohaan2802)
