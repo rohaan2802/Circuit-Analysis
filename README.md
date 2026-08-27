@@ -1,4 +1,4 @@
-# CircuitAnalysis — 5 V DC Supply Lab
+# Circuit Analysis — 5 V DC Supply Lab
 
 Hardware lab archive for a **regulated 5 volt DC power supply**: a 20-slide PowerPoint write-up exported as PDF, breadboard photos, and two short videos of the live circuit. **No software build.**
 
