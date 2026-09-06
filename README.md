@@ -10,6 +10,11 @@ Hardware lab archive for a **regulated 5 volt DC power supply**: a 20-slide Powe
 
 <img width="3840" height="2160" alt="IMG-20221207-WA0006" src="https://github.com/user-attachments/assets/6d1d689b-7253-4dcc-96c1-b2312f20bd1a" />
 
+<img width="723" height="385" alt="Capture3" src="https://github.com/user-attachments/assets/a182db0b-20d0-4deb-8d20-a0c68ae78a63" />
+
+<img width="528" height="360" alt="Capture" src="https://github.com/user-attachments/assets/950f1f70-2852-4990-a761-6d162dd27c46" />
+
+<img width="444" height="381" alt="Capture1" src="https://github.com/user-attachments/assets/8939eb32-f01f-4283-90c6-9daafe9df31a" />
 
 ## Table of contents
 
