@@ -2,19 +2,21 @@
 
 Hardware lab archive for a **regulated 5 volt DC power supply**: a 20-slide PowerPoint write-up exported as PDF, breadboard photos, and two short videos of the live circuit. **No software build.**
 
-**Extracted** below from `5 VOLT DC SUPPLY.pdf` (pypdf). Filenames and media dates are from `TREE.txt`. Where the slides contradict themselves, both wordings are quoted.
+This repository documents the design, simulation references, hardware build, and measured result of a regulated 5 V DC power supply. The technical notes below were transcribed from `5 VOLT DC SUPPLY.pdf`; media filenames and dates are preserved from the original project archive. Conflicting specifications are called out explicitly in the dedicated consistency section.
 
 **Author:** Mohammad Rohaan · **Roll:** 22I-2327 · **GitHub:** [rohaan2802](https://github.com/rohaan2802)
 
 ---
 
-<img width="3840" height="2160" alt="IMG-20221207-WA0006" src="https://github.com/user-attachments/assets/6d1d689b-7253-4dcc-96c1-b2312f20bd1a" />
+### Project gallery — hardware, circuit, and measurement references
 
-<img width="723" height="385" alt="Capture3" src="https://github.com/user-attachments/assets/a182db0b-20d0-4deb-8d20-a0c68ae78a63" />
+<img width="3840" height="2160" alt="Regulated 5 V supply hardware build" src="https://github.com/user-attachments/assets/6d1d689b-7253-4dcc-96c1-b2312f20bd1a" />
 
-<img width="528" height="360" alt="Capture" src="https://github.com/user-attachments/assets/950f1f70-2852-4990-a761-6d162dd27c46" />
+<img width="723" height="385" alt="Circuit analysis reference" src="https://github.com/user-attachments/assets/a182db0b-20d0-4deb-8d20-a0c68ae78a63" />
 
-<img width="444" height="381" alt="Capture1" src="https://github.com/user-attachments/assets/8939eb32-f01f-4283-90c6-9daafe9df31a" />
+<img width="528" height="360" alt="Simulation schematic reference" src="https://github.com/user-attachments/assets/950f1f70-2852-4990-a761-6d162dd27c46" />
+
+<img width="444" height="381" alt="Measured output reference" src="https://github.com/user-attachments/assets/8939eb32-f01f-4283-90c6-9daafe9df31a" />
 
 ## Table of contents
 
