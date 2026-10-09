@@ -1,0 +1,13 @@
+item,qty,preferred_spec,notes,source_in_pdf
+Mains input,1,220-230 V AC lab supply,Supervised only; fuse primary,Apparatus p.5
+Step-down transformer,1,12 V secondary (alt text: 15 V / 2 A),Prefer apparatus+results; isolate mains,p.5 / p.8
+Bridge rectifier diodes,4,1N4007 or equiv. 1 A,PDF PIV text may be wrong; use datasheet,p.5 / p.9
+Filter capacitor,1,Sized reservoir (verify vs PDF 470 nF),Teaching labs often use 470 uF-class electrolytic,p.10
+Voltage regulator,1,LM7805 / 7805 TO-220,Input typically >=7 V; add heat sink if Vin high,p.11 / p.17
+Load resistor,1,1 kOhm,Defines DMM measurement point,p.5 / p.13
+LED indicator,1,Standard 3/5 mm LED,Use series limiting as wired on board,p.5 / p.13
+Breadboard,1,Full/half size,Temporary prototype (Veroboard optional),p.5 / p.12
+Hookup wire / jumpers,1 set,Assorted,Solid for breadboard,Hardware photos
+Digital multimeter,1,DC voltage range,Measure across load for ~5 V,Results p.20
+Heat sink (optional),1,TO-220 clip-on,Recommended when (Vin-5)*I is large,p.17
+Primary fuse (optional but recommended),1,Rated for transformer primary,Safety,Safety notes

@@ -1,6 +1,15 @@
 # Circuit Analysis — 5 V DC Supply Lab
 
-Hardware lab archive for a **regulated 5 V DC power supply**: transformer → bridge rectifier → capacitive filter → **LM7805** → LED + 1 kΩ load. Includes the graded 20-slide PDF, breadboard photos, live videos, and fifteen labelled feature screenshots. **No software build** — open the PDF, photos, and videos with any standard viewer.
+[![Lab archive](https://img.shields.io/badge/type-hardware%20lab%20archive-0f6b7a)](https://github.com/rohaan2802/Circuit-Analysis)
+[![Regulator](https://img.shields.io/badge/regulator-LM7805-064e57)](docs/pinouts.md)
+[![Result](https://img.shields.io/badge/measured-5.06%20V-1b7a4b)](#measured-result)
+[![Screenshots](https://img.shields.io/badge/screenshots-20%20labelled-33691e)](#feature-screenshots)
+
+Hardware lab archive for a **regulated 5 V DC power supply**:
+
+`mains → step-down transformer → bridge rectifier → capacitive filter → LM7805 → LED + 1 kΩ load`
+
+Includes the graded **20-slide PDF**, breadboard photos, **two live videos**, **20 labelled feature screenshots**, and a rebuild pack (BOM, pinouts, wiring / safety / troubleshooting checklists, measurement log). **No software build** — open PDF, images, and MP4s with any standard viewer.
 
 **Author:** Mohammad Rohaan · **Roll:** 22I-2327 · **GitHub:** [rohaan2802](https://github.com/rohaan2802)
 
@@ -24,33 +33,40 @@ Hardware still (5 Dec 2022):
 
 https://github.com/rohaan2802/Circuit-Analysis/blob/main/IMG_20221205_163654.jpg
 
+Secondary hardware angle (7 Dec 2022):
+
+https://github.com/rohaan2802/Circuit-Analysis/blob/main/IMG-20221207-WA0006.jpeg
+
 ---
 
 ## Table of contents
 
 1. [What this archive is](#what-this-archive-is)
 2. [Live demo](#live-demo)
-3. [Feature screenshots](#feature-screenshots)
-4. [Deep feature walkthrough](#deep-feature-walkthrough)
-5. [Block diagram (signal path)](#block-diagram-signal-path)
-6. [PDF metadata](#pdf-metadata)
-7. [Objectives and introduction](#objectives-and-introduction)
-8. [Apparatus list](#apparatus-list)
-9. [Stage-by-stage theory](#stage-by-stage-theory)
-10. [Conversion procedure](#conversion-procedure)
-11. [Measured result](#measured-result)
-12. [Inconsistencies in the write-up](#inconsistencies-in-the-write-up)
-13. [Repository layout](#repository-layout)
-14. [How to use the archive](#how-to-use-the-archive)
-15. [Safety](#safety)
-16. [Limitations](#limitations)
-17. [Author](#author)
+3. [Quick start](#quick-start)
+4. [Extra lab features (rebuild pack)](#extra-lab-features-rebuild-pack)
+5. [Feature screenshots (20)](#feature-screenshots-20)
+6. [Deep feature walkthrough](#deep-feature-walkthrough)
+7. [Block diagram](#block-diagram-signal-path)
+8. [Acceptance criteria](#acceptance-criteria)
+9. [PDF metadata](#pdf-metadata)
+10. [Objectives and introduction](#objectives-and-introduction)
+11. [Apparatus list](#apparatus-list)
+12. [Stage-by-stage theory](#stage-by-stage-theory)
+13. [Conversion procedure](#conversion-procedure)
+14. [Measured result](#measured-result)
+15. [Inconsistencies in the write-up](#inconsistencies-in-the-write-up)
+16. [Repository layout](#repository-layout)
+17. [How to use the archive](#how-to-use-the-archive)
+18. [Safety](#safety)
+19. [Limitations](#limitations)
+20. [Author](#author)
 
 ---
 
 ## What this archive is
 
-Course **final project presentation** for a breadboard 5 V regulated supply: 220/230 V AC in, isolation step-down transformer, diode bridge, filter capacitor, **LM7805**, LED + 1 kΩ load. Group submission to **Engr. Nimra Fatima**.
+Course **final project presentation** for a breadboard 5 V regulated supply submitted to **Engr. Nimra Fatima**.
 
 | Member | Roll |
 |--------|------|
@@ -60,191 +76,209 @@ Course **final project presentation** for a breadboard 5 V regulated supply: 220
 
 Media timestamps: **5 December 2022** (`IMG_20221205_*`, `video_20221205_*`) and **7 December 2022** (WhatsApp image + PDF creation date).
 
-This repository is intentionally a **documentation + evidence** pack: theory slides, simulation capture, physical build photos, live video, and a multimeter result of **5.06 V**.
+This repository is a **documentation + evidence + rebuild** pack: theory slides, Proteus capture, physical build photos, live video, DMM result (**5.06 V**), and practical lab helpers under [`docs/`](docs/README.md).
 
 ---
 
-## Feature screenshots
+## Quick start
 
-Fifteen labelled captures of every major teaching and hardware feature in the archive. Old gallery embeds were removed; these replace them.
+1. Open a [Live demo](#live-demo) MP4 URL (full link shown above).
+2. Skim [Feature screenshots (20)](#feature-screenshots-20) for every stage visually.
+3. Read `5 VOLT DC SUPPLY.pdf` for the graded narrative.
+4. If rebuilding in a supervised lab: follow [`docs/rebuild-checklist.md`](docs/rebuild-checklist.md) → [`docs/wiring-checklist.md`](docs/wiring-checklist.md) → log in [`docs/measurement-log.md`](docs/measurement-log.md).
+
+---
+
+## Extra lab features (rebuild pack)
+
+These are **project-relevant extras** added to groom the archive beyond the original PDF dump:
+
+| Feature | File | Why it exists |
+|---------|------|----------------|
+| Machine-readable BOM | [`docs/bom.csv`](docs/bom.csv) | Parts + PDF page cross-refs for ordering / lab prep |
+| Rebuild gate list | [`docs/rebuild-checklist.md`](docs/rebuild-checklist.md) | Ordered build / power-up procedure |
+| Wiring ticks | [`docs/wiring-checklist.md`](docs/wiring-checklist.md) | Secondary-side visual QA vs photos |
+| Pinouts | [`docs/pinouts.md`](docs/pinouts.md) | LM7805 TO-220, bridge diamond, LED polarity |
+| Troubleshooting matrix | [`docs/troubleshooting.md`](docs/troubleshooting.md) | Symptom → cause → check |
+| Measurement log | [`docs/measurement-log.md`](docs/measurement-log.md) | Template anchored to archive **5.06 V** |
+| Safety ticks | [`docs/safety-checklist.md`](docs/safety-checklist.md) | Supervised mains / thermal reminders |
+| Docs index | [`docs/README.md`](docs/README.md) | One-page map of the pack |
+| Labelled screenshot set | [`docs/screenshots/`](docs/screenshots/) | 20 captures covering slides + hardware |
+| License | [`LICENSE`](LICENSE) | Clear reuse terms for the documentation pack |
+| Tree map | [`TREE.txt`](TREE.txt) | Exact archive layout |
+
+---
+
+## Feature screenshots (20)
+
+Twenty labelled captures. Earlier gallery embeds were removed; this set is the canonical visual map.
 
 ### 1. Title — final project presentation
-
-Cover slide naming the work **5 VOLT DC SUPPLY — FINAL PROJECT PRESENTATION**.
 
 ![Title — final project presentation](docs/screenshots/01-title-final-project.jpg)
 
 ### 2. Objectives
 
-Design / analyse a logical power-conversion circuit; identify apparatus; ground the work in rectifier + regulator theory.
-
 ![Objectives](docs/screenshots/02-objectives.jpg)
 
 ### 3. Introduction
-
-Why 5 V DC matters, regulated vs unregulated supplies, and framing this practical as **AC → DC** power electronics.
 
 ![Introduction](docs/screenshots/03-introduction.jpg)
 
 ### 4. Apparatus list
 
-Bill of materials as written in the PDF: mains, breadboard, transformer, bridge, filter, LM7805, 1 kΩ, LED.
-
 ![Apparatus list](docs/screenshots/04-apparatus-list.jpg)
 
 ### 5. Apparatus images
-
-Photo collage of physical parts used for the breadboard build (image-heavy slide).
 
 ![Apparatus images](docs/screenshots/05-apparatus-images.jpg)
 
 ### 6. Transformer stage
 
-Step-down / isolation stage: 220/230 V primary → low-voltage secondary before rectification.
-
 ![Transformer stage](docs/screenshots/06-transformer-stage.jpg)
 
 ### 7. Bridge rectifier
-
-Four-diode **1N4007** bridge converting AC secondary into pulsating DC.
 
 ![Bridge rectifier](docs/screenshots/07-bridge-rectifier.jpg)
 
 ### 8. Capacitive filter
 
-Filter capacitor “fills the troughs” of the rectified waveform so the regulator sees smoother DC.
-
 ![Capacitive filter](docs/screenshots/08-capacitive-filter.jpg)
 
 ### 9. LM7805 regulator
-
-Linear regulator stage: holds ≈5 V at the output within the IC’s dropout / input window.
 
 ![LM7805 regulator](docs/screenshots/09-lm7805-regulator.jpg)
 
 ### 10. Load and LED
 
-1 kΩ base load plus LED indicator behaviour under a real resistive load.
-
 ![Load and LED](docs/screenshots/10-load-and-led.jpg)
 
 ### 11. Four-step conversion
-
-Teaching sequence: step down → rectify → filter → regulate (230 V AC path toward 5 V DC).
 
 ![Four-step conversion](docs/screenshots/11-four-step-conversion.jpg)
 
 ### 12. Regulation and heat sink
 
-Headroom / thermal notes for the 7805 when input DC sits several volts above 5 V.
-
 ![Regulation and heat sink](docs/screenshots/12-regulation-heatsink.jpg)
 
 ### 13. Proteus simulation
 
-Simulation schematic / Proteus capture embedded in the presentation (image-only slide).
-
 ![Proteus simulation](docs/screenshots/13-proteus-simulation.jpg)
 
-### 14. Hardware breadboard
-
-Physical build photographed on **5 Dec 2022** — transformer secondary into the breadboard regulator chain.
+### 14. Hardware breadboard (photo)
 
 ![Hardware breadboard](docs/screenshots/14-hardware-breadboard.jpg)
 
 ### 15. Measured result — 5.06 V
 
-Results slide: DMM across the load reads **5.06 V**, confirming regulation near the 5 V target.
-
 ![Measured result — 5.06 V](docs/screenshots/15-measured-result-5v06.jpg)
+
+### 16. Team and submission
+
+Group members / roll numbers on the submission slide.
+
+![Team and submission](docs/screenshots/16-team-and-submission.jpg)
+
+### 17. Breadboard prototype notes
+
+Breadboard vs Veroboard guidance — why a temporary prototype board was used.
+
+![Breadboard prototype notes](docs/screenshots/17-breadboard-prototype.jpg)
+
+### 18. AC → DC conversion step
+
+Detailed teaching slide for rectification inside the four-step narrative.
+
+![AC to DC conversion step](docs/screenshots/18-ac-to-dc-conversion-step.jpg)
+
+### 19. Hardware image (PDF slide)
+
+Presentation slide labelled **HARDWARE IMAGE** — graded deck evidence of the physical build.
+
+![Hardware image slide](docs/screenshots/19-hardware-image-slide.jpg)
+
+### 20. Hardware secondary angle
+
+Additional physical photo (`IMG-20221207-WA0006.jpeg`) for orientation / wiring cross-check.
+
+![Hardware secondary angle](docs/screenshots/20-hardware-secondary-angle.jpg)
 
 ---
 
 ## Deep feature walkthrough
 
-### Feature A — Title and scope
+### A. Title and academic scope
 
-The deck is a **final project presentation**, not a product datasheet. It packages objectives, apparatus, theory, a four-step conversion narrative, Proteus evidence, hardware photos, and one DMM reading. Use it as a lab narrative: what was intended, what was built, what was measured.
+The deck is a **final project presentation**, packaging objectives, apparatus, theory, conversion steps, Proteus evidence, hardware, and one DMM reading. Use it as a lab narrative, not a manufacturing BOM alone (see also [`docs/bom.csv`](docs/bom.csv)).
 
-### Feature B — Objectives
+### B. Objectives
 
-Objectives emphasise **design + analysis** of a complete AC–DC chain, not a single component demo. That drives the slide order: apparatus → transformer → rectifier → filter → regulator → load → measured result.
+Emphasise **design + analysis** of a full AC–DC chain. That is why slides progress transformer → rectifier → filter → regulator → load → result.
 
-### Feature C — Introduction (regulated vs unregulated)
+### C. Introduction — regulated vs unregulated
 
-The introduction contrasts:
+| Type | Behaviour | This project |
+|------|-----------|--------------|
+| Unregulated | Sags with load; follows ripple | Intermediate nodes only |
+| Regulated | Holds ≈5 V via IC when Vin > dropout | **LM7805 output** (goal) |
 
-- **Unregulated** 5 V-ish rails that sag with load and ripple with line.
-- **Regulated** 5 V held by an IC (here **LM7805**) once the input stays above dropout.
+### D. Apparatus as the build contract
 
-Pedagogically this sets why a bare bridge + capacitor is not enough for logic / USB-style loads.
-
-### Feature D — Apparatus as a contract
-
-Treat the apparatus table as the **preferred build contract** when slides disagree:
+When slides disagree, prefer apparatus + photos + **5.06 V**:
 
 | Item | Preferred reading |
 |------|-------------------|
-| Mains | 220–230 V AC (lab supply) |
-| Prototype | Breadboard (Veroboard recommended in text; breadboard used) |
-| Transformer | Step-down **12 V** secondary (one slide claims 15 V / 2 A chosen) |
+| Mains | 220–230 V AC (supervised) |
+| Prototype | Breadboard |
+| Transformer | **12 V** secondary (one slide says 15 V / 2 A) |
 | Rectifier | **Bridge**, four **1N4007** |
-| Filter | Capacitor (PDF heading says **470 nF**; see inconsistencies) |
-| Regulator | **LM7805** / IC7805 |
+| Filter | Capacitor (PDF heading **470 nF** — verify lab practice) |
+| Regulator | **LM7805** |
 | Load | **1 kΩ** + LED |
 
-### Feature E — Transformer
+### E. Transformer
 
-Purpose: **voltage step-down** and **galvanic isolation** from mains. Current rating must exceed load current. Peak secondary ≈ \(V_{\mathrm{RMS}}\sqrt{2}\) (e.g. 12 V RMS ≈ 17 V peak) before diode drops.
+Step-down + isolation. Peak ≈ \(V_{\mathrm{RMS}}\sqrt{2}\) (12 V RMS ≈ 17 V peak) before diode drops.
 
-### Feature F — Bridge rectifier
+### F. Bridge rectifier
 
-Four diodes arranged so both AC half-cycles feed the filter with the same polarity. PDF names **1N4007**, 1 A. Written PIV of 50 V conflicts with typical 1N4007 datasheet PIV (1000 V) — always check the part you hold.
+Four diodes feed both AC half-cycles into one DC polarity. See [`docs/pinouts.md`](docs/pinouts.md). PDF PIV text of 50 V may not match a real 1N4007 datasheet — check the part you buy.
 
-### Feature G — Capacitive filter
+### G. Capacitive filter
 
-Without a reservoir capacitor, the bridge output dips toward zero each half-cycle. The capacitor charges near the peaks and discharges into the load/regulator between peaks, reducing ripple. Teaching labs often use hundreds of **µF**; this PDF literally says **470 nF** — rebuild carefully and prefer a sized electrolytic if supervisors allow.
+Charges near peaks, discharges between peaks, reduces ripple into the 7805. If rebuilding, confirm capacitor value with your instructor (µF-class reservoirs are common in teaching labs).
 
-### Feature H — LM7805
+### H. LM7805
 
-Linear positive regulator, “78” series, “05” = 5 V. Written windows:
+Fixed +5 V linear regulator. Written windows: output ~4.8–5.2 V; input ~7–35 V (elsewhere 7.2 V min); ~1 A class with thermal limits. Dissipation ≈ \((V_{\mathrm{in}}-5)\times I_{\mathrm{load}}\).
 
-- Output roughly **4.8–5.2 V**
-- Input roughly **7–35 V** (elsewhere **7.2 V** minimum)
-- About **1 A** class (with thermal limits)
+### I. Load and LED
 
-The IC drops the excess voltage as heat: \(P \approx (V_{\mathrm{in}}-5)\times I_{\mathrm{load}}\). Heat sinks matter when Vin is high or load current rises.
+1 kΩ makes the DMM point repeatable; LED shows life. Current-limit the LED.
 
-### Feature I — Load and LED
+### J–K. Four-step narrative + thermal notes
 
-A defined **1 kΩ** load makes the measurement repeatable. The LED confirms the rail is alive; series current limiting must be respected so the LED does not overcurrent.
+Step down → rectify → filter → regulate. Ignore the stray “2 diode full-wave” paragraph when it conflicts with the bridge apparatus. Use a heat sink when Vin stays high.
 
-### Feature J — Four-step conversion narrative
+### L. Proteus
 
-Pages 14–17 teach:
+Image-only evidence — no `.pdsprj` in-repo.
 
-1. **Step down** 230 V AC → ~12 V AC RMS  
-2. **Rectify** to pulsating DC  
-3. **Filter** to smoother DC  
-4. **Regulate** to +5 V with IC7805  
+### M–O. Hardware evidence set
 
-One paragraph incorrectly says a **two-diode** full-wave rectifier; the apparatus and hardware intent remain a **four-diode bridge**. Prefer apparatus + results when rebuilding.
+Photo `IMG_20221205_163654.jpg`, PDF hardware slide, secondary WhatsApp angle, and two MP4s are the physical proof chain. Compare 7805 orientation and capacitor polarity before power-up.
 
-### Feature K — Thermal / headroom notes
+### P. Measured 5.06 V
 
-The deck discusses dropout (~7–7.2 V input) and heat-sink use. This is the difference between “it lights an LED” and “it survives a longer lab session”.
+Acceptance snapshot for this archive — not a full load-regulation curve. Log repeats with [`docs/measurement-log.md`](docs/measurement-log.md).
 
-### Feature L — Proteus simulation
+### Q. Team / submission metadata
 
-Slide labelled **PROTEUS IMAGE** is a schematic / sim capture inside the PDF. There is **no** checked-in `.pdsprj` file — the screenshot is the simulation evidence.
+Screenshot **16** preserves group rolls for academic provenance.
 
-### Feature M — Hardware breadboard
+### R. Breadboard vs Veroboard
 
-`IMG_20221205_163654.jpg` and the live MP4s are the physical proof: transformer secondary, breadboard wiring, regulator package, LED/load region. Compare orientation of the 7805 and capacitor polarity against the apparatus list.
-
-### Feature N — Measured 5.06 V
-
-Closing result: DMM across the load ≈ **5.06 V**. That is the success criterion for this archive — regulation near 5 V under the documented load — not a full load-regulation curve.
+Screenshot **17** documents the temporary-prototype choice used for the graded build.
 
 ---
 
@@ -271,6 +305,19 @@ Closing result: DMM across the load ≈ **5.06 V**. That is the success criterio
 
 ---
 
+## Acceptance criteria
+
+| Check | Archive expectation |
+|-------|---------------------|
+| Topology | Transformer → bridge → filter → LM7805 → load |
+| Load | 1 kΩ (as documented) |
+| Output | ≈ **5.0 V** DC (**5.06 V** on graded slide) |
+| Evidence | PDF results slide + optional photo/video of DMM |
+
+Fail → [`docs/troubleshooting.md`](docs/troubleshooting.md).
+
+---
+
 ## PDF metadata
 
 | Field | Value |
@@ -281,21 +328,19 @@ Closing result: DMM across the load ≈ **5.06 V**. That is the success criterio
 | Creation / mod date | 2022-12-07 03:04:29 +05:00 |
 | Pages | 20 |
 
-Image-heavy slides with little extractable text: **APPARATUS IMAGES** (p. 6–7), **PROTEUS IMAGE** (p. 18), **HARDWARE IMAGE** (p. 19). Feature screenshots above cover those visually.
-
 ---
 
 ## Objectives and introduction
 
-**Objectives (p. 3):** design and analyse the circuit; list apparatus; apply theory.
+**Objectives:** design and analyse the circuit; list apparatus; apply theory.
 
-**Introduction (p. 4):** 5 V DC rails are common; obtain 5 V from 220 VAC using transformers, diodes, and regulation; distinguish regulated vs unregulated; treat the practical as **AC to DC (rectification)** ending in a regulated 5 V load supply.
+**Introduction:** obtain usable 5 V from 220 VAC using transformers, diodes, filtering, and regulation; frame the practical as **AC → DC** ending in a regulated rail.
 
 ---
 
 ## Apparatus list
 
-See Feature D above and screenshot **04**. LM7805 characteristics as written on p. 11: output 4.8–5.2 V, input 7–35 V (p. 17 also 7.2–35 V), ~1 A. Page 12 contrasts breadboard (temporary) vs Veroboard (soldered); **breadboard used**.
+See screenshot **04**, Feature D, and [`docs/bom.csv`](docs/bom.csv). Page 12: breadboard used (Veroboard optional for permanence).
 
 ---
 
@@ -303,17 +348,17 @@ See Feature D above and screenshot **04**. LM7805 characteristics as written on 
 
 | Stage | PDF focus | Role |
 |-------|-----------|------|
-| Transformer (p. 8) | 12 V vs 15 V / 2 A wording | Step-down + isolation |
-| Bridge (p. 9) | 4 × 1N4007 | AC → pulsating DC |
-| Filter (p. 10) | Capacitive filter | Ripple reduction |
-| LM7805 (p. 11) | Fixed 5 V | Regulation |
-| Load / LED (p. 13) | 1 kΩ + indicator | Defined load + visual check |
+| Transformer | p. 8 | Step-down + isolation |
+| Bridge | p. 9 | AC → pulsating DC |
+| Filter | p. 10 | Ripple reduction |
+| LM7805 | p. 11 | Regulation |
+| Load / LED | p. 13 | Defined load + indicator |
 
 ---
 
 ## Conversion procedure
 
-Four teaching steps (p. 14–17): step down → rectify → filter → regulate. Peak estimate \(12\sqrt{2}\approx 17\) V before diode drops. Heat-sink guidance when Vin stays high above 5 V. Prefer **bridge + LM7805 + 5.06 V result** over the “2 diode full-wave” paragraph.
+Teaching steps (p. 14–17): step down → rectify → filter → regulate. Prefer **bridge + LM7805 + 5.06 V** over conflicting 2-diode textbook text. Detail slide: screenshot **18**.
 
 ---
 
@@ -321,23 +366,21 @@ Four teaching steps (p. 14–17): step down → rectify → filter → regulate.
 
 > When checking with the DMM (Digital Multimeter), the voltage across the load resistance is almost near the 5 volt but the DMM shows **5.06 V**.
 
-Conclusion on the same slide: 230 V → 12 V AC → bridge DC → capacitors smooth → **LM7805** → **+5 V**.
+Conclusion: 230 V → 12 V AC → bridge → filter → **LM7805** → **+5 V**.
 
 ---
 
 ## Inconsistencies in the write-up
 
-These conflicts are **inside the PDF**, not invented here:
-
 | Topic | One slide says | Another slide says |
 |-------|----------------|--------------------|
 | Mains | 220 V | 230 V |
 | Secondary | 12 V | 15 V / 2 A chosen |
-| Rectifier | Bridge, **4** diodes (1N4007) | Full-wave, **2** diodes |
-| Filter value | **470 nF** | Typical labs use hundreds of **µF** |
+| Rectifier | Bridge, **4** diodes | Full-wave, **2** diodes |
+| Filter value | **470 nF** | Typical labs: hundreds of **µF** |
 | 7805 input min | 7 V | 7.2 V |
 
-**Rebuild rule:** follow apparatus list + hardware photos + **5.06 V** result; treat conflicting textbook paste as non-authoritative.
+**Rebuild rule:** apparatus list + hardware photos + **5.06 V** win.
 
 ---
 
@@ -345,52 +388,44 @@ These conflicts are **inside the PDF**, not invented here:
 
 ```text
 Circuit-Analysis/
-├── README.md                      ← this document
+├── README.md
 ├── LICENSE
 ├── TREE.txt
 ├── .gitattributes
-├── 5 VOLT DC SUPPLY.pdf           ← graded 20-slide deck
-├── IMG_20221205_163654.jpg        ← hardware photo
-├── IMG-20221207-WA0006.jpeg       ← additional photo
-├── video_20221205_163544.mp4      ← live demo (primary)
-├── video_20221205_163700.mp4      ← live demo (secondary)
-└── docs/screenshots/              ← 15 feature screenshots (01–15)
+├── 5 VOLT DC SUPPLY.pdf
+├── IMG_20221205_163654.jpg
+├── IMG-20221207-WA0006.jpeg
+├── video_20221205_163544.mp4
+├── video_20221205_163700.mp4
+└── docs/          ← rebuild pack + 20 screenshots (see docs/README.md)
 ```
-
-Original media filenames and dates are preserved. Screenshots are regenerated from the PDF + hardware photo for README clarity.
 
 ---
 
 ## How to use the archive
 
-1. Open the [Live demo](#live-demo) video links (full URLs listed there — no “click here”).
-2. Read `5 VOLT DC SUPPLY.pdf`; zoom Proteus / hardware pages.
-3. Skim the [Feature screenshots](#feature-screenshots) section for a visual map of every stage.
-4. Compare `IMG_20221205_163654.jpg` to the apparatus list (7805 orientation, cap polarity, LED, transformer leads).
-5. Nothing to compile — PDF reader + image viewer + video player only.
+1. Open [Live demo](#live-demo) links (full URLs — no “click here”).
+2. Walk [Feature screenshots (20)](#feature-screenshots-20).
+3. Read the PDF; zoom Proteus / hardware pages.
+4. Cross-check photos against [`docs/wiring-checklist.md`](docs/wiring-checklist.md).
+5. Rebuild only under supervision using the [rebuild pack](#extra-lab-features-rebuild-pack).
 
 ---
 
 ## Safety
 
-Documentation only. If you rebuild in a **supervised** lab:
-
-- Fuse the transformer primary; never touch the 220/230 V side without supervision.
-- Respect electrolytic **polarity** if a large reservoir capacitor is used.
-- Keep 7805 **headroom** and add a **heat sink** when Vin is high.
-- Verify diode PIV from the **datasheet** for the parts you buy.
-- This repo is not a substitute for lab safety training.
+Documentation only. Supervised rebuilds: fuse the primary, respect capacitor polarity, give the 7805 headroom / heat sink, verify diode ratings from datasheets, never treat this README as a substitute for lab safety training. Use [`docs/safety-checklist.md`](docs/safety-checklist.md).
 
 ---
 
 ## Limitations
 
-- No checked-in Proteus project, KiCad/Eagle sources, BOM CSV, or scope captures.
-- Theory slides mix 2-diode vs 4-diode text and 12 V vs 15 V secondary.
-- Only one tabulated DMM point (**5.06 V**), not a full load/line regulation suite.
-- Filter caption **470 nF** may not match common lab practice — verify before rebuild.
+- No Proteus project file, PCB CAD, BOM from a supplier cart, or oscilloscope CSV in the original submission
+- Theory slides mix rectifier types and secondary voltages
+- Single graded DMM point (**5.06 V**), not a full regulation suite
+- Filter caption **470 nF** may need instructor confirmation before rebuild
 
-**Not in this repo:** firmware, MATLAB, or PCB Gerbers.
+The [`docs/`](docs/README.md) pack adds checklists and BOM structure **around** those limits; it does not invent missing lab instruments data.
 
 ---
 
@@ -398,5 +433,5 @@ Documentation only. If you rebuild in a **supervised** lab:
 
 **Mohammad Rohaan** · Roll **22I-2327**  
 Group: Taha Sajid Awan (22I-2302), Talha Tariq (22I-2309)  
-GitHub: [https://github.com/rohaan2802](https://github.com/rohaan2802)  
-Repository: [https://github.com/rohaan2802/Circuit-Analysis](https://github.com/rohaan2802/Circuit-Analysis)
+GitHub: https://github.com/rohaan2802  
+Repository: https://github.com/rohaan2802/Circuit-Analysis

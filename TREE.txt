@@ -1,14 +1,22 @@
 Circuit-Analysis/
 ├── README.md
 ├── LICENSE
-├── .gitattributes
 ├── TREE.txt
+├── .gitattributes
 ├── 5 VOLT DC SUPPLY.pdf
 ├── IMG_20221205_163654.jpg
 ├── IMG-20221207-WA0006.jpeg
 ├── video_20221205_163544.mp4
 ├── video_20221205_163700.mp4
 └── docs/
+    ├── README.md
+    ├── bom.csv
+    ├── rebuild-checklist.md
+    ├── wiring-checklist.md
+    ├── pinouts.md
+    ├── troubleshooting.md
+    ├── measurement-log.md
+    ├── safety-checklist.md
     └── screenshots/
         ├── 01-title-final-project.jpg
         ├── 02-objectives.jpg
@@ -24,4 +32,9 @@ Circuit-Analysis/
         ├── 12-regulation-heatsink.jpg
         ├── 13-proteus-simulation.jpg
         ├── 14-hardware-breadboard.jpg
-        └── 15-measured-result-5v06.jpg
+        ├── 15-measured-result-5v06.jpg
+        ├── 16-team-and-submission.jpg
+        ├── 17-breadboard-prototype.jpg
+        ├── 18-ac-to-dc-conversion-step.jpg
+        ├── 19-hardware-image-slide.jpg
+        └── 20-hardware-secondary-angle.jpg
