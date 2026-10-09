@@ -1,0 +1,27 @@
+Circuit-Analysis/
+├── README.md
+├── LICENSE
+├── .gitattributes
+├── TREE.txt
+├── 5 VOLT DC SUPPLY.pdf
+├── IMG_20221205_163654.jpg
+├── IMG-20221207-WA0006.jpeg
+├── video_20221205_163544.mp4
+├── video_20221205_163700.mp4
+└── docs/
+    └── screenshots/
+        ├── 01-title-final-project.jpg
+        ├── 02-objectives.jpg
+        ├── 03-introduction.jpg
+        ├── 04-apparatus-list.jpg
+        ├── 05-apparatus-images.jpg
+        ├── 06-transformer-stage.jpg
+        ├── 07-bridge-rectifier.jpg
+        ├── 08-capacitive-filter.jpg
+        ├── 09-lm7805-regulator.jpg
+        ├── 10-load-and-led.jpg
+        ├── 11-four-step-conversion.jpg
+        ├── 12-regulation-heatsink.jpg
+        ├── 13-proteus-simulation.jpg
+        ├── 14-hardware-breadboard.jpg
+        └── 15-measured-result-5v06.jpg
